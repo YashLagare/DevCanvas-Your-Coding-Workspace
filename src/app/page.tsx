@@ -1,101 +1,95 @@
-import Image from "next/image";
-
 export default function Home() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
+    <div className="relative isolate overflow-hidden">
+      {/* Background decorative glow */}
+      <div
+        className="absolute inset-x-0 -top-40 -z-10 transform-gpu overflow-hidden blur-3xl sm:-top-80"
+        aria-hidden="true"
+      >
+        <div
+          className="relative left-[calc(50%-11rem)] aspect-1155/678 w-[36.125rem] -translate-x-1/2 rotate-[30deg] bg-gradient-to-tr from-[#ff80b5] to-[#9089fc] opacity-20 sm:left-[calc(50%-30rem)] sm:w-[72.1875rem]"
+          style={{
+            clipPath:
+              'polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)',
+          }}
         />
-        <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
+      </div>
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+      <div className="text-center py-12 sm:py-16">
+        <h1 className="text-4xl font-extrabold tracking-tight text-white sm:text-6xl bg-gradient-to-r from-indigo-200 via-slate-100 to-indigo-200 bg-clip-text text-transparent animate-fade-in">
+          Authentication Built for Next.js
+        </h1>
+        <p className="mt-6 text-lg leading-8 text-slate-400 max-w-2xl mx-auto">
+          Experience the power of Clerk. Elegant user flows, complete security, and flexible components, fully integrated with Next.js App Router.
+        </p>
+      </div>
+
+      {/* Grid Features */}
+      <div className="mx-auto mt-8 max-w-5xl sm:mt-12 lg:mt-16">
+        <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          
+          {/* Card 1 */}
+          <div className="group relative rounded-2xl border border-slate-800 bg-slate-900/50 p-6 hover:bg-slate-900/80 transition-all duration-300 hover:-translate-y-1">
+            <div className="absolute inset-0 rounded-2xl bg-gradient-to-r from-indigo-500/10 to-purple-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" />
+            <div className="h-10 w-10 rounded-lg bg-indigo-500/10 text-indigo-400 flex items-center justify-center font-bold mb-4">
+              🔑
+            </div>
+            <h3 className="text-lg font-semibold text-white">Prebuilt Components</h3>
+            <p className="mt-2 text-sm text-slate-400">
+              Beautiful, accessible components like &lt;UserButton /&gt;, &lt;SignInButton /&gt;, and &lt;SignUpButton /&gt; built directly for Next.js.
+            </p>
+            <a
+              href="https://clerk.com/docs/reference/components/overview"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mt-4 inline-flex items-center gap-1 text-xs font-semibold text-indigo-400 hover:text-indigo-300 transition cursor-pointer"
+            >
+              Explore Components &rarr;
+            </a>
+          </div>
+
+          {/* Card 2 */}
+          <div className="group relative rounded-2xl border border-slate-800 bg-slate-900/50 p-6 hover:bg-slate-900/80 transition-all duration-300 hover:-translate-y-1">
+            <div className="absolute inset-0 rounded-2xl bg-gradient-to-r from-purple-500/10 to-pink-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" />
+            <div className="h-10 w-10 rounded-lg bg-purple-500/10 text-purple-400 flex items-center justify-center font-bold mb-4">
+              🏢
+            </div>
+            <h3 className="text-lg font-semibold text-white">Organizations</h3>
+            <p className="mt-2 text-sm text-slate-400">
+              Easily manage organizations, invites, roles, permissions, and members with Clerk's built-in multi-tenant architecture.
+            </p>
+            <a
+              href="https://clerk.com/docs/guides/organizations/overview"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mt-4 inline-flex items-center gap-1 text-xs font-semibold text-purple-400 hover:text-purple-300 transition cursor-pointer"
+            >
+              Learn Organizations &rarr;
+            </a>
+          </div>
+
+          {/* Card 3 */}
+          <div className="group relative rounded-2xl border border-slate-800 bg-slate-900/50 p-6 hover:bg-slate-900/80 transition-all duration-300 hover:-translate-y-1 sm:col-span-2 lg:col-span-1">
+            <div className="absolute inset-0 rounded-2xl bg-gradient-to-r from-pink-500/10 to-indigo-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" />
+            <div className="h-10 w-10 rounded-lg bg-pink-500/10 text-pink-400 flex items-center justify-center font-bold mb-4">
+              🎛️
+            </div>
+            <h3 className="text-lg font-semibold text-white">Admin Dashboard</h3>
+            <p className="mt-2 text-sm text-slate-400">
+              Configure environments, customize user emails, configure webhooks, social connections, and manage active user sessions.
+            </p>
+            <a
+              href="https://dashboard.clerk.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mt-4 inline-flex items-center gap-1 text-xs font-semibold text-pink-400 hover:text-pink-300 transition cursor-pointer"
+            >
+              Go to Dashboard &rarr;
+            </a>
+          </div>
+
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
+      </div>
     </div>
   );
 }
