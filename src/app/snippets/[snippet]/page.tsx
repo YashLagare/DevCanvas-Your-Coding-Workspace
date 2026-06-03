@@ -39,7 +39,7 @@ function SnippetDetailPage() {
                                         className="w-full h-full object-contain"
                                     />
                                 </div>
-                                <div>
+                            <div>
                                     <h1 className="text-xl sm:text-2xl font-semibold text-white mb-2">
                                         {snippet.title}
                                     </h1>
