@@ -10,6 +10,7 @@ import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
 import { api } from "../../../convex/_generated/api";
+import DevScreenPromo from "../../components/DevScreenPromo";
 import CodeBlock from "./_components/CodeBlock";
 import ProfileHeader from "./_components/ProfileHeader";
 import ProfileHeaderSkeleton from "./_components/ProfileHeaderSkeleton";
@@ -71,6 +72,8 @@ function ProfilePage() {
                 )}
 
                 {(userStats === undefined || !isLoaded) && <ProfileHeaderSkeleton />}
+
+                <DevScreenPromo />
 
                 {/* Main content */}
                 <div

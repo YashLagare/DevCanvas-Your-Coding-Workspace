@@ -5,6 +5,7 @@ import Image from "next/image";
 import { useState } from "react";
 import { api } from "../../../convex/_generated/api";
 
+import DevScreenPromo from "@/components/DevScreenPromo";
 import NavigationHeader from "@/components/NavigationHeader";
 import { AnimatePresence, motion } from "framer-motion";
 import { BookOpen, Code, Grid, Layers, Search, Tag, X } from "lucide-react";
@@ -74,6 +75,8 @@ function SnippetsPage() {
                         Explore a curated collection of code snippets from the community
                     </motion.p>
                 </div>
+
+                <DevScreenPromo />
 
                 {/* Filters Section */}
                 <div className="relative max-w-5xl mx-auto mb-12 space-y-6">
