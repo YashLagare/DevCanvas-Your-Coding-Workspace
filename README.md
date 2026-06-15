@@ -10,7 +10,8 @@ Authentication is implemented using **Clerk**, integrated into Convex via `Conve
 Subscription state (**Pro**) is updated via **Lemon Squeezy webhooks** (signature/HMAC verification), enabling server-side gating for code execution language usage.
 
 Project Screenshot Placeholder:
-[INSERT_PROJECT_COVER_SCREENSHOT_HERE]
+<img width="1901" height="915" alt="image" src="https://github.com/user-attachments/assets/35d4732a-dbfc-4900-b6b1-173ddba2621a" />
+
 
 ---
 
