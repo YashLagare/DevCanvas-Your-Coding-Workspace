@@ -19,7 +19,7 @@ Subscription state (**Pro**) is updated via **Lemon Squeezy webhooks** (signatur
 ## Project Purpose
 Provide an authenticated, community-driven code snippet experience with engagement features (stars + comments) and monetization through Pro subscription-based gating.
 
-## Core Features (from code)
+## Core Features
 - Snippet browsing page with client-side search/filter and grid/list view
 - Snippet detail page with read-only Monaco editor and comment thread
 - Star/unstar snippets (auth-required)
@@ -55,7 +55,7 @@ DevCanvas
 ## Objective
 Enable authenticated users to share and discover code snippets with interactive social features and subscription-based access control for code execution.
 
-## Scope (verified from code)
+## Scope
 Included:
 - Snippet listing and detail display
 - Star/unstar
@@ -65,7 +65,7 @@ Included:
 - Lemon Squeezy webhook Pro updates
 - Backend Pro enforcement for execution language usage
 
-Not implemented (explicitly absent from code):
+Not implemented:
 - No password-based auth flow (Clerk only)
 - No custom JWT issuance/verification
 - No server-side snippet search/indexing (listing loads all snippets and filters client-side)
@@ -481,7 +481,7 @@ Authorization checks (ownership / Pro gating where applicable)
 Convex returns data or throws (UI displays error)
 ```
 
-Auth-required Convex operations (from code):
+Auth-required Convex operations:
 - `api.snippets.createSnippet` (mutation)
 - `api.snippets.deleteSnippet` (mutation)
 - `api.snippets.starSnippet` (mutation)
@@ -629,7 +629,7 @@ Key UI internal flows:
   - `commentId: Id<"snippetComments">`
 - Success response:
   - void
-- Error response (from code):
+- Error response:
   - `Not authenticated`, `Comment not found`, `Not authorized to delete this comment`
 
 ### Users (`api.users`)
@@ -809,7 +809,7 @@ Async background
 
 # 21. CHALLENGES & LEARNINGS
 
-## Technical Challenges (verified from code)
+## Technical Challenges
 - Snippet listing loads all snippets (`getSnippets` collects all records) and filters client-side.
 - Denormalized userName stored in snippets/comments (can become stale if Clerk profile changes).
 - Execution service is intentionally unavailable in the current client store (`runCode()` returns “discontinued” message), while execution logging still exists via `saveExecution`.
@@ -851,7 +851,7 @@ Async background
 
 # 23. PERFORMANCE ANALYSIS
 
-## Current optimizations (from code)
+## Current optimizations
 - Convex indexes used in multiple places:
   - `users.by_user_id`
   - `snippets.by_user_id`
@@ -860,7 +860,7 @@ Async background
   - `codeExecutions.by_user_id`
 - Execution history uses `paginate` via `usePaginatedQuery`.
 
-## Potential bottlenecks (from code)
+## Potential bottlenecks
 - `api.snippets.getSnippets` returns all snippets without pagination.
 - `api.codeExecutions.getUserStats` collects all executions and aggregates in memory.
 - `getUserStats` loads starred snippet details via `Promise.all` of `ctx.db.get`.
